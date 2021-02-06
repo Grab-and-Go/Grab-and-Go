@@ -2,6 +2,17 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const mongoose = require("mongoose");
+
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/GrabAndGo',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
