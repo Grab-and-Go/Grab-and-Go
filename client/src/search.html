@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grag and Go Map</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Grab and Goers</h1>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            // Map options
+            var options = {
+                zoom: 10,
+                center: { lat: 47.6062, lng: -122.3321 }
+            }
+
+            // New Map
+            var map = new google.maps.Map(document.getElementById('map'), options)
+
+            /*
+            // Add marker
+            var marker = new google.maps.Marker({
+                position: {lat: 47.6628, lng:-122.3139}, 
+                map: map, 
+                icon: "",
+            });
+
+            var infoWindow = new google.maps.InfoWindow({
+                content: "<h1>U district</h1>"
+            });
+
+            marker.addListener('clcik', function(){
+                infoWindow.open(map, marker);
+            })
+            */
+
+            // Array of markers
+            var markers = [
+                {
+                    coords: { lat: 47.6628, lng: -122.3139 },
+                    iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+                    content: "<p>Udistrict</p>"
+                },
+                {
+                    coords: { lat: 47.6101, lng: -122.2015 },
+                    content: "<p>Bellevue</p>"
+                },
+                {
+                    coords: { lat: 47.6253, lng: -122.3222 }, 
+                    content: "<p>Seattle</p>"
+                }
+            ];
+
+            // Loop through markers
+            for(var i=0; i<markers.length; i++) {
+                // Add marker
+                addMarker(markers[i]);
+            }
+
+           
+
+            // Add marker function
+            function addMarker(props) {
+                var marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map,
+                });
+
+
+                // check for custom icon
+                if (props.iconImage) {
+                    // Set icon image
+                    marker.setIcon(props.iconImage);
+                }
+
+                // check content
+                if (props.content) {
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: props.content
+                    });
+
+                    marker.addListener('click', function () {
+                        infoWindow.open(map, marker);
+                    });
+
+                }
+
+
+            }
+        }
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC51cQ90JnlsT4CkBAb1AIVa2ynRRqz49A&callback=initMap&libraries=&v=weekly"
+        async>
+        </script>
+
+</body>
+
+</html>
