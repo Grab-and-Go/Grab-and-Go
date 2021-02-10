@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Axios from "axios";
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
+const Documenu = require('documenu');
+Documenu.configure('16b00f3cfdd6f2c51bf522089e62c490');
 
 
 
@@ -8,24 +10,37 @@ import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-map
 
 const Hero = ({ handleLogout }) => {
     const [query, setQuery] = useState("")
-    
-    const documenuAPIkey = "16b00f3cfdd6f2c51bf522089e62c490"
-    const documenuURL = `https://api.documenu.com/v2/restaurant/4072702673999819?key=${documenuAPIkey}`;
-    
 
+    // const documenuAPIkey = "16b00f3cfdd6f2c51bf522089e62c490"
+    // const documenuURL = `https://api.documenu.com/v2/restaurant/4072702673999819?key=${documenuAPIkey}`;
+
+    /*
     const getData = async () => {
         const result = await Axios.get(documenuURL);
         console.log(result);
     }
+    */
+   
+       const getData = async () => {
+           let result = await Documenu.Restaurants.getByZipCode('98105');
+           console.log(result);
+        //    Documenu.Restaurants.getByState('NY')
+        //        .then(res => {
+        //            console.log(res);
+        //        });
+       }
+
 
     const onSubmit = e => {
         e.preventDefault();
         getData();
+       
     }
 
-    const onChange= e => {
+    const onChange = e => {
         setQuery(e.target.value);
     }
+
 
 
     return (
@@ -35,7 +50,7 @@ const Hero = ({ handleLogout }) => {
                 <button onClick={handleLogout}>Logout</button>
             </nav>
             <form className="search-form" onSubmit={onSubmit}>
-                <input type="text" placeholder="search" autoComplete="off" onChange={onChange}  />
+                <input type="text" placeholder="search" autoComplete="off" onChange={onChange} />
                 <button>Search</button>
             </form>
             <div style={{ width: "100vw", height: "50vh" }}>
