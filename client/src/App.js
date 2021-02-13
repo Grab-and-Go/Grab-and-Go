@@ -3,6 +3,7 @@ import fire from './fire';
 import Login from "./Login"
 import Hero from "./Hero"
 import "./App.css";
+import ParticlesBg from "particles-bg";
 
 
 const App = () => {

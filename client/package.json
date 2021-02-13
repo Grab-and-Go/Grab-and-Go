@@ -7,6 +7,7 @@
     "axios": "^0.21.1",
     "documenu": "^1.1.0",
     "firebase": "^8.2.6",
+    "particles-bg": "^2.5.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-google-maps": "^9.4.5",

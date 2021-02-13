@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import Restaurant from "./pages/Restaurant";
 import Axios from "axios";
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
 const Documenu = require('documenu');
 Documenu.configure('16b00f3cfdd6f2c51bf522089e62c490');
+
 
 
 
@@ -44,7 +46,7 @@ const Hero = ({ handleLogout }) => {
 
 
     return (
-        <section className="hero">
+    <section className="hero">
             <nav>
                 <h2 onClick={getData} >Welcome</h2>
                 <button onClick={handleLogout}>Logout</button>
@@ -65,6 +67,9 @@ const Hero = ({ handleLogout }) => {
             </div>
 
         </section>
+        
+           
+        
     )
 }
 
