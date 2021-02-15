@@ -14,9 +14,9 @@ function RestaurantCard(props)
     <img src={process.env.PUBLIC_URL + "/assets/food.jpeg"} alt={props.name} class="image"></img>
       <h5 class="card-title">{item.restaurant_name}</h5>
       <p class="card-text"><a href={item.restaurant_website} target="_blank">Visit website!</a></p> 
-      <button type="submit" className="btn btn-success">
+      <span onClick={()=> props.handleMenu(item.menus[0].menu_sections)}>
           View Menu
-        </button>
+        </span>
     </div>
   </div>
     )}
