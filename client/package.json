@@ -4,10 +4,13 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@iconify/icons-mdi": "^1.1.11",
+    "@iconify/react": "^1.1.4",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "documenu": "^1.1.0",
     "firebase": "^8.2.6",
+    "google-map-react": "^2.1.9",
     "particles-bg": "^2.5.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
