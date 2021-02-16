@@ -3,9 +3,11 @@ import fire from './fire';
 import Login from "./Login"
 import Hero from "./Hero"
 import "./App.css";
+import Newmap from "./components/Map/Map";
 
 
 const App = () => {
+  
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -83,6 +85,7 @@ const App = () => {
 
 
   return (
+    
     <div className="App">
       {user ? (
         <Hero handleLogout={handleLogout} />
@@ -101,8 +104,8 @@ const App = () => {
           />
 
         )}
-
     </div>
+    
   );
 
 }
