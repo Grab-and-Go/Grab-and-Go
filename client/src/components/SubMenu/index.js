@@ -13,9 +13,10 @@ function SubMenu(props){
             rows.push(obj);
         } 
         var cart =[];
-        var obj={};
+       
          const cartHandler=(event)=>{
             event.preventDefault();
+             var obj={};
             obj["name"]=event.target.name;
             obj["cost"]=event.target.value;
             cart.push(obj); 
