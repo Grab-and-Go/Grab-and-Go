@@ -9,7 +9,7 @@ function MenuCard(props){
         {props.menuRes.map(item => 
             <div key={item.id}>
                 <a href="#" className="list-group-item list-group-item-success">{item.section_name}</a> 
-              <SubMenu senddata={item.menu_items}></SubMenu>
+              <SubMenu senddata={item.menu_items} orderCount={props.orderCount}></SubMenu>
             </div>
         
         )}

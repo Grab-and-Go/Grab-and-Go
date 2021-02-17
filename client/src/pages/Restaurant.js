@@ -19,7 +19,8 @@ class App extends Component {
     restaurants:[],
     results:[],
     error: "",
-    menuResults:[{sectionname:"",menu_items:[]}]
+    menuResults:[{sectionname:"",menu_items:[]}],
+    orderCount:""
   }
 
   handleInputChange = event => {
@@ -44,6 +45,10 @@ console.log(menu);
 this.setState({menuResults: menu});
   }
 
+  orderCount = (itemCount)=>{
+      this.setState({orderCount:itemCount});
+  }
+
 
   render(){
 
@@ -57,6 +62,7 @@ this.setState({menuResults: menu});
           >
             {this.state.error}
           </Alert>
+        
           <Map results={this.state.results}/>
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
@@ -66,7 +72,7 @@ this.setState({menuResults: menu});
           
           <RestaurantCard results={this.state.results} handleMenu={this.showMenu}/>
           
-        <MenuCard menuRes={this.state.menuResults}></MenuCard>
+        <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
         
    </Container>
     
