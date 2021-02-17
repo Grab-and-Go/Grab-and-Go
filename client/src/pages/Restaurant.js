@@ -1,20 +1,23 @@
-import React, {Component} from "react";
+
+import React, { Component } from "react";
 import API from "../utils/API";
 import RestaurantCard from "../components/RestaurantCard";
 import ParticlesBg from 'particles-bg';
 import Footer from "../components/Footer";
 import Alert from "../components/Alert";
 import SearchForm from "../components/SearchForm";
-import Container from "../components/Container"
+import Container from "../components/Container";
+import MenuCard from "../components/MenuCard"
 
 
-class Restaurant extends Component {
+class App extends Component {
 
-  state={
+  state = {
     search: "",
-    restaurants:[],
-    results:[],
-    error: ""
+    restaurants: [],
+    results: [],
+    error: "",
+    menuResults: [{ sectionname: "", menu_items: [] }]
   }
 
   handleInputChange = event => {
@@ -33,30 +36,19 @@ class Restaurant extends Component {
       })
       .catch(err => this.setState({ error: err.message }));
   };
-handleMenu = (event,restid) => {
-    event.preventDefault();
-    console.log("restid"+restid);
-    console.log(this.state.search);
-    API.getRestaurants(this.state.search)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data.data, error: "" });
-        console.log("Menu"+res.data.data);
-      })
-      .catch(err => this.setState({ error: err.message }));
-  };
-  
 
-  render(){
+  showMenu = menu => {
+    console.log(menu);
+    this.setState({ menuResults: menu });
+  }
 
-  return (
-    <div>
-    <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
-    <Container>
-      
-          <h1 className="text-center">Grab n Go</h1>
+
+  render() {
+
+    return (
+      <div>
+        <ParticlesBg color="#08f09b" num={300} type="cobweb" bg={true} />
+        <Container>
           <Alert
             type="danger"
             style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
@@ -68,17 +60,19 @@ handleMenu = (event,restid) => {
             handleInputChange={this.handleInputChange}
             restaurants={this.state.restaurants}
           />
-          <RestaurantCard results={this.state.results} handleMenu={this.handleMenu}/>
-   
-   </Container>
-    
-    <Footer/>
-   
-    </div>
-    
-  );
+          <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
+
+          <MenuCard menuRes={this.state.menuResults}></MenuCard>
+
+        </Container>
+
+        <Footer />
+
+      </div>
+
+    );
   }
 
 }
 
-export default Restaurant;
+export default App;
