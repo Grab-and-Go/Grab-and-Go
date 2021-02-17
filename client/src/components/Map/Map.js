@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect }from 'react';
 import GoogleMapReact from "google-map-react";
 import "./style.css";
 import LocationMarker from "./LocationMarker";
 
-
-const Newmap = ({ center, zoom }) => {
+const Newmap = ({ props, center, zoom }) => {
+    const markers = props.results.map(ev => {
+        return <LocationMarker 
+        lat={ev.geo.lat} lng={ev.geo.lon}  />
+    
+    })
+    
     return (
         <div className="map">
             <GoogleMapReact
@@ -12,7 +17,7 @@ const Newmap = ({ center, zoom }) => {
                 defaultCenter={ center }
                 defaultZoom= { zoom }
             >
-                <LocationMarker lat={center.lat} lng={center.lng}/>
+                {markers}
             </GoogleMapReact>
         </div>
     )
