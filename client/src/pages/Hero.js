@@ -16,14 +16,13 @@ const Hero = ({ handleLogout }) => {
     }
 return (
     <section className="hero">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Grab and Go</a>
-            <button class="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{float: "right"}} >Logout</button>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">Grab and Go</a>
+            <button className="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{float: "right"}} >Logout</button>
             
             </nav>
 
             <div style={{ width: "100vw", height: "20vh" }}>
-               <Map />
                 {/* <WrappedMap
                     googleMapURL={"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC51cQ90JnlsT4CkBAb1AIVa2ynRRqz49A"}
                     loadingElement={<div style={{ height: '100%' }} />}
