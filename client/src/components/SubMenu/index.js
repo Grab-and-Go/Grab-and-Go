@@ -1,7 +1,9 @@
-import React from "react";
-import './style.css'
+import React,{useContext} from "react";
+import './style.css';
+import DeveloperContext from "../../utils/DeveloperContext"
 
 function SubMenu(props){
+    const {cart, setCart}= useContext(DeveloperContext);
         var rows=[];
         for(var i = 0;i<props.senddata.length;i++){
             var obj = {};
@@ -12,15 +14,15 @@ function SubMenu(props){
             obj["price"] = itemCost;
             rows.push(obj);
         } 
-        var cart =[];
        
          const cartHandler=(event)=>{
             event.preventDefault();
+            console.log(cart);
              var obj={};
             obj["name"]=event.target.name;
             obj["cost"]=event.target.value;
             cart.push(obj); 
-            console.log(cart);
+            setCart(cart);
         }
 
         return (
