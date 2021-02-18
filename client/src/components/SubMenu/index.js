@@ -25,16 +25,16 @@ function SubMenu(props) {
         setCart(cart);
     }
 
-    var cart = [];
-    const cartHandler = (event) => {
-        event.preventDefault();
-        var obj = {};
-        obj["name"] = event.target.name;
-        obj["cost"] = event.target.value;
-        cart.push(obj);
-        // setCart(cart);
-        console.log(cart)
-    }
+    // var cart = [];
+    // const cartHandler = (event) => {
+    //     event.preventDefault();
+    //     var obj = {};
+    //     obj["name"] = event.target.name;
+    //     obj["cost"] = event.target.value;
+    //     cart.push(obj);
+    //     // setCart(cart);
+    //     console.log(cart)
+    // }
 
     return (
         <div class="list-group">

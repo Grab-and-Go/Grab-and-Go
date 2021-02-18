@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Restaurant from "./Restaurant";
-
+import logo from "./LogoMakr-1nU0Zg.png"
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
 import Map from "../components/Map";
 import DeveloperContext from "../utils/DeveloperContext";
