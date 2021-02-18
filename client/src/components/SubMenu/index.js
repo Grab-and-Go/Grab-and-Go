@@ -3,7 +3,7 @@ import './style.css';
 import DeveloperContext from "../../utils/DeveloperContext"
 
 function SubMenu(props) {
-    const { cart, setCart } = useContext(DeveloperContext);
+    // const { cart, setCart } = useContext(DeveloperContext);
     var rows = [];
     for (var i = 0; i < props.senddata.length; i++) {
         var obj = {};
@@ -15,21 +15,22 @@ function SubMenu(props) {
         rows.push(obj);
     }
 
+    var cart = [];
     const cartHandler = (event) => {
         event.preventDefault();
-        console.log(cart);
         var obj = {};
         obj["name"] = event.target.name;
         obj["cost"] = event.target.value;
         cart.push(obj);
-        setCart(cart);
+        // setCart(cart);
+        console.log(cart)
     }
 
     return (
         <div class="list-group">
             {rows.map(item =>
                 <div>
-                    <div class="list-group-item">{item.name} --- {item.price}$<button name={item.name} value={item.price} onClick={cartHandler} className="btn btn-success"><i class="fas fa-shopping-cart"></i></button></div>
+                    <div className="list-group-item">{item.name} --- {item.price}$<button name={item.name} value={item.price} onClick={cartHandler} className="btn btn-success"><i class="fas fa-shopping-cart"></i></button></div>
 
                 </div>)}
         </div>
