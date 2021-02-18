@@ -7,8 +7,10 @@ import Footer from "../components/Footer";
 import Alert from "../components/Alert";
 import SearchForm from "../components/SearchForm";
 import Container from "../components/Container";
-import MenuCard from "../components/MenuCard"
-import Map from "../components/Map"
+import MenuCard from "../components/MenuCard";
+import Map from "../components/Map";
+import DeveloperContext from "../utils/DeveloperContext"
+
 
 
 
@@ -20,7 +22,8 @@ class App extends Component {
     results: [],
     error: "",
     menuResults: [{ sectionname: "", menu_items: [] }],
-    orderCount: ""
+    orderCount: "",
+    cart: []
   }
 
   handleInputChange = event => {
@@ -49,37 +52,44 @@ class App extends Component {
     this.setState({ orderCount: itemCount });
   }
 
+  setCart = (cart) => {
+    this.setState({ cart: cart })
+  }
+
 
   render() {
-
+    const { cart } = this.state
+    const { setCart } = this
     return (
-      <div>
-        <ParticlesBg color="#08f09b" num={300} type="cobweb" bg={true} />
-        <Container>
-          <Alert
-            type="danger"
-            style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-          >
-            {this.state.error}
-          </Alert>
+      <DeveloperContext.Provider value={{ cart, setCart }}>
+        <div>
+          <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
+          <Container>
+            {this.state.cart.length}
+            <Alert
+              type="danger"
+              style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
+            >
+              {this.state.error}
+            </Alert>
 
-          <Map results={this.state.results} />
-          <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            restaurants={this.state.restaurants}
-          />
+            <Map results={this.state.results} />
+            <SearchForm
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+              restaurants={this.state.restaurants}
+            />
 
-          <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
+            <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
 
-          <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
+            <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
 
-        </Container>
+          </Container>
 
-        {/* <Footer /> */}
+          <Footer />
 
-      </div>
-
+        </div>
+      </DeveloperContext.Provider>
     );
   }
 
