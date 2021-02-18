@@ -3,11 +3,7 @@ import Restaurant from "./Restaurant";
 
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
 import Map from "../components/Map";
-<<<<<<< HEAD
-import logo from "./LogoMakr-1nU0Zg.png"
-=======
 import DeveloperContext from "../utils/DeveloperContext";
->>>>>>> develop
 
 const Hero = ({ handleLogout }) => {
     const [query, setQuery] = useState("");
@@ -23,20 +19,14 @@ const Hero = ({ handleLogout }) => {
     const onChange = e => {
         setQuery(e.target.value);
     }
-<<<<<<< HEAD
     return (
 
         <section className="hero">
-=======
-return (
-    
-    <section className="hero">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">Grab and Go</a>
-            <button className="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{float: "right"}} >Logout</button>
-            
+                <a className="navbar-brand" href="#">Grab and Go</a>
+                <button className="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{ float: "right" }} >Logout</button>
+
             </nav>
->>>>>>> develop
 
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,20 +46,12 @@ return (
             </div>
             <Restaurant />
         </section>
-<<<<<<< HEAD
 
 
 
 
 
-=======
-     
-       
-        
-        
-           
-        
->>>>>>> develop
+
     )
 }
 
