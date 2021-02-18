@@ -5,6 +5,7 @@ import Hero from "./pages/Hero";
 import './App.css'
 
 
+
 const App = () => {
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
@@ -84,6 +85,7 @@ const App = () => {
 
   return (
     <div className="App">
+    
       {user ? (
         <Hero handleLogout={handleLogout} />
       ) : (

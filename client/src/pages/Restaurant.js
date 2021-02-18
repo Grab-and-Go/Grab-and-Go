@@ -8,6 +8,8 @@ import Alert from "../components/Alert";
 import SearchForm from "../components/SearchForm";
 import Container from "../components/Container";
 import MenuCard from "../components/MenuCard"
+import Map from "../components/Map"
+
 
 
 class App extends Component {
@@ -17,7 +19,8 @@ class App extends Component {
     restaurants: [],
     results: [],
     error: "",
-    menuResults: [{ sectionname: "", menu_items: [] }]
+    menuResults: [{ sectionname: "", menu_items: [] }],
+    orderCount: ""
   }
 
   handleInputChange = event => {
@@ -42,6 +45,10 @@ class App extends Component {
     this.setState({ menuResults: menu });
   }
 
+  orderCount = (itemCount) => {
+    this.setState({ orderCount: itemCount });
+  }
+
 
   render() {
 
@@ -55,14 +62,17 @@ class App extends Component {
           >
             {this.state.error}
           </Alert>
+
+          <Map results={this.state.results} />
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             restaurants={this.state.restaurants}
           />
+
           <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
 
-          <MenuCard menuRes={this.state.menuResults}></MenuCard>
+          <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
 
         </Container>
 

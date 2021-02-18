@@ -26,14 +26,14 @@ const Login = (props) => {
                 <div className="row">
                     <div className="col md-9">
 
-                        <Tilt className="containerLogin">
+                        <div className="containerLogin">
 
                             <div className="cardA"><img src={Logo} alt="" />
                                 <div className="contentCard">
                                     <h1>Grab and Go</h1><br />
                                     <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque alias quo doloremque id hic culpa maiores magnam voluptatum! Facere vero nesciunt quam suscipit, molestias id aspernatur est. Doloribus, ullam veritatis?</h3>
                                 </div></div>
-                        </Tilt ></div>
+                        </div ></div>
 
                     <div className="col md-3">
 

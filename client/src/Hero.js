@@ -22,21 +22,21 @@ const Hero = ({ handleLogout }) => {
         console.log(result);
     }
     */
-   
-       const getData = async () => {
-           let result = await Documenu.Restaurants.getByZipCode('98105');
-           console.log(result);
+
+    const getData = async () => {
+        let result = await Documenu.Restaurants.getByZipCode('98105');
+        console.log(result);
         //    Documenu.Restaurants.getByState('NY')
         //        .then(res => {
         //            console.log(res);
         //        });
-       }
+    }
 
 
     const onSubmit = e => {
         e.preventDefault();
         getData();
-       
+
     }
 
     const onChange = e => {
@@ -46,7 +46,8 @@ const Hero = ({ handleLogout }) => {
 
 
     return (
-    <section className="hero">
+        <section className="hero">
+           
             <nav>
                 <h2 onClick={getData} >Welcome</h2>
                 <button onClick={handleLogout}>Logout</button>
@@ -67,9 +68,9 @@ const Hero = ({ handleLogout }) => {
             </div>
 
         </section>
-        
-           
-        
+
+
+
     )
 }
 
