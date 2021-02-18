@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Restaurant from "./Restaurant";
 import Map from "../components/Map";
+import DeveloperContext from "../utils/DeveloperContext";
 
 const Hero = ({ handleLogout }) => {
-
-
-    const [query, setQuery] = useState("")
+    const [query, setQuery] = useState("");
+    // const [order, setOrder] = useState({
+    //     orders:[]
+    //   });
 
 
     const onSubmit = e => {
@@ -16,6 +18,7 @@ const Hero = ({ handleLogout }) => {
         setQuery(e.target.value);
     }
 return (
+    
     <section className="hero">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">Grab and Go</a>
@@ -29,6 +32,7 @@ return (
             </div>
  <Restaurant/>
         </section>
+     
        
         
         

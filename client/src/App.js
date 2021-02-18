@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import fire from './fire';
 import Login from "./pages/Login/Login";
 import Hero from "./pages/Hero";
-import './App.css'
+import './App.css';
+
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
+  
 
   const clearInputs = () => {
     setEmail('');

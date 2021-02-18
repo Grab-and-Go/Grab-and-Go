@@ -1,29 +1,41 @@
-import React from "react";
-import './style.css'
+import React,{useContext} from "react";
+import './style.css';
+import DeveloperContext from "../../utils/DeveloperContext"
 
 function SubMenu(props){
+    const {cart, setCart}= useContext(DeveloperContext);
         var rows=[];
         for(var i = 0;i<props.senddata.length;i++){
-        rows.push(props.senddata[i].name);
+            var obj = {};
+            var rand = Math.random()*(15-8) + 8;
+            var power = Math.pow(10, 2);
+            var itemCost = Math.floor(rand*power) / power;
+            obj["name"]= props.senddata[i].name;
+            obj["price"] = itemCost;
+            rows.push(obj);
         } 
-        var cart =[];
+       
+        // fixing event.target
          const cartHandler=(event)=>{
             event.preventDefault();
-            var obj={};
+            console.log(cart);
+             var obj={};
+            console.log(event.target);
             obj["name"]=event.target.name;
-            obj["price"]="10";
-            cart.push(obj);
+            obj["cost"]=event.target.value;
+            cart.push(obj); 
+            setCart(cart);
         }
+
         return (
         <div class="list-group">
             {rows.map(item=>
             <div>
-            <a href="#" class="list-group-item">{item}</a>
-            {/* <button name={item} onClick={cartHandler}>Add to Cart</button> */}
+            <div class="list-group-item">{item.name} --- {item.price}$<button name={item.name} value={item.price} onClick={cartHandler} className="btn btn-success"><i class="fas fa-shopping-cart"></i></button></div>
+            
             </div>)}
         </div>
         ); 
-      
 }
 
 export default SubMenu;

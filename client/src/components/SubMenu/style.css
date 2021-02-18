@@ -23,3 +23,9 @@
 {
   overflow: hidden;
 }
+
+/* ignore click events on the icon because the div contains all the information */
+.fa-shopping-cart
+{
+  pointer-events: none;
+}
