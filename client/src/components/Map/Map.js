@@ -1,15 +1,15 @@
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import GoogleMapReact from "google-map-react";
 import "./style.css";
 import LocationMarker from "./LocationMarker";
 
-const Newmap = ({ props, center, zoom }) => {
-    const markers = props.results.map(ev => {
-        return <LocationMarker 
-        lat={ev.geo.lat} lng={ev.geo.lon}  />
-    
+const Map = ({ results, center, zoom }) => {
+
+    const markers = results.map(item => {
+        return <LocationMarker lat={item.geo.lat} lng={item.geo.lon} />
     })
-    
+    console.log(results);
+
     return (
         <div className="map">
             <GoogleMapReact
@@ -17,13 +17,14 @@ const Newmap = ({ props, center, zoom }) => {
                 defaultCenter={ center }
                 defaultZoom= { zoom }
             >
-                {markers}
+             
+                {/* {markers} */}
             </GoogleMapReact>
         </div>
     )
 }
 
-Newmap.defaultProps = {
+Map.defaultProps = {
     center: {
         lat: 47.6062, 
         lng: -122.3321
@@ -31,4 +32,4 @@ Newmap.defaultProps = {
     zoom: 14
 }
 
-export default Newmap;
+export default Map;

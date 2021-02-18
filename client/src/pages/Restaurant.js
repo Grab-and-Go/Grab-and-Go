@@ -8,6 +8,8 @@ import Alert from "../components/Alert";
 import SearchForm from "../components/SearchForm";
 import Container from "../components/Container";
 import MenuCard from "../components/MenuCard"
+import Map from "../components/Map/Map"
+
 
 
 class App extends Component {
@@ -60,6 +62,8 @@ this.setState({menuResults: menu});
             handleInputChange={this.handleInputChange}
             restaurants={this.state.restaurants}
           />
+          
+          <Map results={this.state.results}/>
           <RestaurantCard results={this.state.results} handleMenu={this.showMenu}/>
           
         <MenuCard menuRes={this.state.menuResults}></MenuCard>
