@@ -4,6 +4,18 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@iconify/icons-mdi": "^1.1.11",
+    "@iconify/react": "^1.1.4",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "documenu": "^1.1.0",
+    "firebase": "^8.2.6",
+    "google-map-react": "^2.1.9",
+    "mdbreact": "^5.0.1",
+    "particles-bg": "^2.5.0",
+>>>>>>> develop
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "^2.1.1"
