@@ -1,11 +1,11 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import locationIcon from "@iconify/icons-mdi/restaurant"
+import locationIcon from "@iconify/icons-mdi/restaurant-menu";
 
 const LocationMarker = ({ lat, lng, onClick }) => {
 
     const markerStyle={
-        fontSize: "2rem",
+        fontSize: "2.5rem",
         color: "purple"
     };
     return (

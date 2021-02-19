@@ -12,8 +12,6 @@ import Map from "../components/Map/Map";
 import DeveloperContext from "../utils/DeveloperContext"
 
 
-
-
 class Restaurant extends Component {
 
   state={
@@ -23,7 +21,8 @@ class Restaurant extends Component {
     error: "",
     menuResults:[{sectionname:"",menu_items:[]}],
     orderCount:"",
-    cart:[]
+    cart:[], 
+    center:{lat:  47.6062, lng:  -122.3321}
   }
 
   handleInputChange = event => {
@@ -38,7 +37,8 @@ class Restaurant extends Component {
           throw new Error(res.data.message);
         }
         this.setState({ results: res.data.data, error: "" });
-        console.log(res.data.data);
+        this.setState({ center:{lat:  res.data.data[0].geo.lat, lng: res.data.data[0].geo.lon  } })
+
       })
       .catch(err => this.setState({ error: err.message }));
   };
@@ -73,14 +73,14 @@ this.setState({menuResults: menu});
             {this.state.error}
           </Alert>
         
-          {/* <Map results={this.state.results}/> */}
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             restaurants={this.state.restaurants}
           />
           
-          <Map results={this.state.results}/>
+          <Map center={this.state.center} results={this.state.results}/>
+
           <RestaurantCard results={this.state.results} handleMenu={this.showMenu}/>
           
         <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>

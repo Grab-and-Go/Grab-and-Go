@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Restaurant from "./Restaurant";
-import Map from "../components/Map";
 import DeveloperContext from "../utils/DeveloperContext";
 
 const Hero = ({ handleLogout }) => {
