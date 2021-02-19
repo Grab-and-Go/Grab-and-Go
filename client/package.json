@@ -1,6 +1,9 @@
 {
   "name": "mern",
   "version": "0.1.0",
+  "engines": {
+    "node": "14.8.0"
+  },
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
@@ -11,6 +14,7 @@
     "documenu": "^1.1.0",
     "firebase": "^8.2.6",
     "google-map-react": "^2.1.9",
+    "mdbreact": "^5.0.1",
     "particles-bg": "^2.5.0",
     "react": "^16.6.3",
     "react-bootstrap": "^1.4.3",

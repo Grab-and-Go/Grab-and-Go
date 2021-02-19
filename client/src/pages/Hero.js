@@ -1,44 +1,59 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component} from 'react';
 import Restaurant from "./Restaurant";
 import DeveloperContext from "../utils/DeveloperContext";
-
-const Hero = ({ handleLogout }) => {
-    const [query, setQuery] = useState("");
-    // const [order, setOrder] = useState({
-    //     orders:[]
-    //   });
+import Cart from "./Cart";
+import Navbar from "../components/Navbar";
+import fire from '../fire';
 
 
-    const onSubmit = e => {
-        e.preventDefault();
-    }
-
-    const onChange = e => {
-        setQuery(e.target.value);
-    }
-return (
+class Hero1 extends Component{
     
-    <section className="hero">
+    state = 
+    {currentPage:"Home",
+     cart:[]}
+    
+    handleLogout = () => {
+        fire.auth().signOut();
+      };
+    setCart = (cart) =>{
+        this.setState({cart:cart})
+    }
+   
+
+    renderPage = () => {
+        if (this.state.currentPage === "Home") {
+          return <Restaurant />;
+        } 
+         else if (this.state.currentPage === "Cart"){
+          return <Cart/>;
+        //   <DeveloperContext.Provider value={{cart,setCart}} ><Cart /></DeveloperContext.Provider>);
+        }
+      };
+     handlePageChange = page => {
+        this.setState({ currentPage: page });
+      };
+
+
+    render(){
+        const { cart } = this.state
+    const { setCart } = this
+        return(
+            <DeveloperContext.Provider value={{cart,setCart}}>
+            <section className="hero">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">Grab and Go</a>
-            <button className="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{float: "right"}} >Logout</button>
-            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"><Navbar handleLogout={this.handleLogout} 
+                 currentPage={this.state.currentPage}
+              handlePageChange={this.handlePageChange}></Navbar>
+              </div>
             </nav>
-
-            <div style={{ width: "100vw", height: "20vh" }}>
-           
-
-            </div>
- <Restaurant/>
-        </section>
-     
-       
-        
-        
-           
-        
-    )
+ {/* <Restaurant/> */}
+ {this.renderPage()}
+ </section>
+</DeveloperContext.Provider>
+        )
+    }
 }
 
 
-export default Hero
+export default Hero1

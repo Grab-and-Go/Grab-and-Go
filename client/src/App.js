@@ -65,9 +65,9 @@ const App = () => {
         }
       });
   }
-  const handleLogout = () => {
-    fire.auth().signOut();
-  }
+  // const handleLogout = () => {
+  //   fire.auth().signOut();
+  // }
 
   const authListener = () => {
     fire.auth().onAuthStateChanged(user => {
@@ -89,7 +89,7 @@ const App = () => {
     
     <div className="App">
       {user ? (
-        <Hero handleLogout={handleLogout} />
+        <Hero/>
       ) : (
           <Login
             email={email}
