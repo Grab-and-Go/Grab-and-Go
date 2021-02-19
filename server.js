@@ -3,8 +3,6 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const Documenu = require('documenu');
-Documenu.configure('16b00f3cfdd6f2c51bf522089e62c490');
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/GrabAndGo',
