@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import './style.css';
 import DeveloperContext from "../../utils/DeveloperContext"
 
-
 function SubMenu(props) {
     const { cart, setCart } = useContext(DeveloperContext);
     var rows = [];
@@ -16,15 +15,19 @@ function SubMenu(props) {
         rows.push(obj);
     }
 
+    // fixing event.target
     const cartHandler = (event) => {
         event.preventDefault();
         console.log(cart);
         var obj = {};
+        console.log(event.target);
         obj["name"] = event.target.name;
         obj["cost"] = event.target.value;
         cart.push(obj);
         setCart(cart);
     }
+
+
 
     return (
         <div class="list-group">

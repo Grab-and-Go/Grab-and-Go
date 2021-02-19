@@ -1,7 +1,8 @@
 import React from "react";
 
 const DeveloperContext = React.createContext({
-    orderCount: "",
+  orderCount: "",
+  cart: []
 
 });
 

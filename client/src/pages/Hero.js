@@ -1,74 +1,61 @@
-import React, { useState } from 'react';
-
+import React, { Component } from 'react';
 import Restaurant from "./Restaurant";
-import logo from "./LogoMakr-1nU0Zg.png"
-import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
-import Map from "../components/Map";
 import DeveloperContext from "../utils/DeveloperContext";
+import Cart from "./Cart";
+import Navbar from "../components/Navbar";
+import fire from '../fire';
 
 
+class Hero1 extends Component {
 
-const Hero = ({ handleLogout }) => {
+    state =
+        {
+            currentPage: "Home",
+            cart: []
+        }
 
-    const [query, setQuery] = useState("");
-    // const [order, setOrder] = useState({
-    //     orders:[]
-    //   });
-
-
-    const onSubmit = e => {
-        e.preventDefault();
+    handleLogout = () => {
+        fire.auth().signOut();
+    };
+    setCart = (cart) => {
+        this.setState({ cart: cart })
     }
 
-    const onChange = e => {
-        setQuery(e.target.value);
+
+    renderPage = () => {
+        if (this.state.currentPage === "Home") {
+            return <Restaurant />;
+        }
+        else if (this.state.currentPage === "Cart") {
+            return <Cart />;
+            //   <DeveloperContext.Provider value={{cart,setCart}} ><Cart /></DeveloperContext.Provider>);
+        }
+    };
+    handlePageChange = page => {
+        this.setState({ currentPage: page });
+    };
+
+
+    render() {
+        const { cart } = this.state
+        const { setCart } = this
+        return (
+            <DeveloperContext.Provider value={{ cart, setCart }}>
+                <section className="hero">
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <a className="navbar-brand" href="#">Grab and Go</a>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent"><Navbar handleLogout={this.handleLogout}
+                            currentPage={this.state.currentPage}
+                            handlePageChange={this.handlePageChange}></Navbar>
+                        </div>
+                    </nav>
+                    {/* <Restaurant/> */}
+                    {this.renderPage()}
+                </section>
+            </DeveloperContext.Provider>
+        )
     }
-
-
-    return (
-
-        <section className="hero">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div>
-                    <a class="navbar-brand" href="#"><img src={logo} alt="" /></a></div>
-                <div>
-
-                    <button class="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{ float: "right" }} >Logout</button>
-
-
-                </div>
-
-
-            </nav>
-            <div style={{ width: "100vw", height: "20vh" }}>
-                {/* <WrappedMap
-                    googleMapURL={"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC51cQ90JnlsT4CkBAb1AIVa2ynRRqz49A"}
-                    loadingElement={<div style={{ height: '100%' }} />}
-                    containerElement={<div style={{ height: '100%' }} />}
-                    mapElement={<div style={{ height: '100%' }} />} */}
-
-                {/* /> */}
-
-            </div>
-            <Restaurant />
-
-        </section>
-
-
-
-
-
-    )
 }
 
-// function Map() {
-//     return (<GoogleMap
-//         defaultZoom={10}
-//         defaultCenter={{ lat: 47.6062, lng: -122.3321 }}
-//     />
-//     );
-// }
 
-// const WrappedMap = withScriptjs(withGoogleMap(Map));
-
-export default Hero
+export default Hero1

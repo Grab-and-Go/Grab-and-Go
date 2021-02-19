@@ -8,13 +8,12 @@ import Alert from "../components/Alert";
 import SearchForm from "../components/SearchForm";
 import Container from "../components/Container";
 import MenuCard from "../components/MenuCard";
-import Map from "../components/Map";
-import DeveloperContext from "../utils/DeveloperContext"
+import Map from "../components/Map/Map";
+import DeveloperContext from "../utils/DeveloperContext";
+import Cart from "../pages/Cart";
 
 
-
-
-class App extends Component {
+class Restaurant extends Component {
 
   state = {
     search: "",
@@ -23,7 +22,7 @@ class App extends Component {
     error: "",
     menuResults: [{ sectionname: "", menu_items: [] }],
     orderCount: "",
-    cart: []
+    center: { lat: 47.6062, lng: -122.3321 }
   }
 
   handleInputChange = event => {
@@ -38,7 +37,8 @@ class App extends Component {
           throw new Error(res.data.message);
         }
         this.setState({ results: res.data.data, error: "" });
-        console.log(res.data.data);
+        this.setState({ center: { lat: res.data.data[0].geo.lat, lng: res.data.data[0].geo.lon } })
+
       })
       .catch(err => this.setState({ error: err.message }));
   };
@@ -52,47 +52,51 @@ class App extends Component {
     this.setState({ orderCount: itemCount });
   }
 
-  setCart = (cart) => {
-    this.setState({ cart: cart })
-  }
+  // setCart = (cart) =>{
+  //     this.setState({cart:cart})
+  // }
 
 
   render() {
-    const { cart } = this.state
-    const { setCart } = this
+    // const { cart } = this.state
+    // const { setCart } = this
     return (
-      <DeveloperContext.Provider value={{ cart, setCart }}>
-        <div>
-          <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
-          <Container>
-            {this.state.cart.length}
-            <Alert
-              type="danger"
-              style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-            >
-              {this.state.error}
-            </Alert>
+      // <DeveloperContext.Provider value={{cart,setCart}}>
+      <div>
+        <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
+        <Container>
+          {/* {this.state.cart.length} */}
 
-            <Map results={this.state.results} />
-            <SearchForm
-              handleFormSubmit={this.handleFormSubmit}
-              handleInputChange={this.handleInputChange}
-              restaurants={this.state.restaurants}
-            />
+          {/* <Cart></Cart> */}
 
-            <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
+          <Alert
+            type="danger"
+            style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
+          >
+            {this.state.error}
+          </Alert>
 
-            <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
+          <SearchForm
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+            restaurants={this.state.restaurants}
+          />
 
-          </Container>
+          <Map center={this.state.center} results={this.state.results} />
 
-          <Footer />
+          <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
 
-        </div>
-      </DeveloperContext.Provider>
+          <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
+
+        </Container>
+
+        <Footer />
+
+      </div>
+      // </DeveloperContext.Provider>
     );
   }
 
 }
 
-export default App;
+export default Restaurant;
