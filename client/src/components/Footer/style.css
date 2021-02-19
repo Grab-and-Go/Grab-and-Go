@@ -2,14 +2,15 @@
   margin-top: 1rem;
   padding: 5px;
   background-color: #023220;
-  position: fixed;
-  bottom: 0;
+  /* position: absolute; */
+  display: flex;
+  margin-bottom: 0;
   left: 0;
   width: 100%;
 }
 
 .footer span {
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   left: 0;
   right: 0;

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import './style.css';
 import DeveloperContext from "../../utils/DeveloperContext"
 
+
 function SubMenu(props) {
     const { cart, setCart } = useContext(DeveloperContext);
     var rows = [];
@@ -25,22 +26,11 @@ function SubMenu(props) {
         setCart(cart);
     }
 
-    // var cart = [];
-    // const cartHandler = (event) => {
-    //     event.preventDefault();
-    //     var obj = {};
-    //     obj["name"] = event.target.name;
-    //     obj["cost"] = event.target.value;
-    //     cart.push(obj);
-    //     // setCart(cart);
-    //     console.log(cart)
-    // }
-
     return (
         <div class="list-group">
             {rows.map(item =>
                 <div>
-                    <div className="list-group-item">{item.name} --- {item.price}$<button name={item.name} value={item.price} onClick={cartHandler} className="btn btn-success"><i class="fas fa-shopping-cart"></i></button></div>
+                    <div class="list-group-item">{item.name} --- {item.price}$<button name={item.name} value={item.price} onClick={cartHandler} className="btn btn-success"><i class="fas fa-shopping-cart"></i></button></div>
 
                 </div>)}
         </div>

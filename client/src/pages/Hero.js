@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+
 import Restaurant from "./Restaurant";
 import logo from "./LogoMakr-1nU0Zg.png"
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
 import Map from "../components/Map";
 import DeveloperContext from "../utils/DeveloperContext";
 
+
+
 const Hero = ({ handleLogout }) => {
+
     const [query, setQuery] = useState("");
     // const [order, setOrder] = useState({
     //     orders:[]
@@ -19,19 +23,21 @@ const Hero = ({ handleLogout }) => {
     const onChange = e => {
         setQuery(e.target.value);
     }
+
+
     return (
 
         <section className="hero">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">Grab and Go</a>
-                <button className="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{ float: "right" }} >Logout</button>
-
-            </nav>
-
-
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#"><img src={logo} alt="" /></a>
-                <button class="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{ float: "right" }} >Logout</button>
+                <div>
+                    <a class="navbar-brand" href="#"><img src={logo} alt="" /></a></div>
+                <div>
+
+                    <button class="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} style={{ float: "right" }} >Logout</button>
+
+
+                </div>
+
 
             </nav>
             <div style={{ width: "100vw", height: "20vh" }}>
@@ -45,8 +51,8 @@ const Hero = ({ handleLogout }) => {
 
             </div>
             <Restaurant />
-        </section>
 
+        </section>
 
 
 
