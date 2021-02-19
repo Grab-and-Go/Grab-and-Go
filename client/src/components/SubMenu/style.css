@@ -23,3 +23,8 @@
 {
   overflow: hidden;
 }
+
+.fa-shopping-cart
+{
+  pointer-events: none;
+}
