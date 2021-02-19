@@ -9,7 +9,9 @@ import SearchForm from "../components/SearchForm";
 import Container from "../components/Container";
 import MenuCard from "../components/MenuCard";
 import Map from "../components/Map";
-import DeveloperContext from "../utils/DeveloperContext"
+import DeveloperContext from "../utils/DeveloperContext";
+import Cart from "../pages/Cart";
+import { Link, Route } from "react-router-dom";
 
 
 
@@ -22,8 +24,8 @@ class App extends Component {
     results:[],
     error: "",
     menuResults:[{sectionname:"",menu_items:[]}],
-    orderCount:"",
-    cart:[]
+    orderCount:""
+    // cart:[]
   }
 
   handleInputChange = event => {
@@ -52,20 +54,23 @@ this.setState({menuResults: menu});
       this.setState({orderCount:itemCount});
   }
 
-  setCart = (cart) =>{
-      this.setState({cart:cart})
-  }
+  // setCart = (cart) =>{
+  //     this.setState({cart:cart})
+  // }
 
 
   render(){
-    const { cart } = this.state
-    const { setCart } = this
+    // const { cart } = this.state
+    // const { setCart } = this
   return (
-      <DeveloperContext.Provider value={{cart,setCart}}>
+      // <DeveloperContext.Provider value={{cart,setCart}}>
     <div>
     <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
     <Container>
-        {this.state.cart.length}
+        {/* {this.state.cart.length} */}
+      
+        {/* <Cart></Cart> */}
+
           <Alert
             type="danger"
             style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
@@ -89,7 +94,7 @@ this.setState({menuResults: menu});
     <Footer/>
    
     </div>
-    </DeveloperContext.Provider>
+    // </DeveloperContext.Provider>
   );
   }
 
