@@ -1,5 +1,5 @@
 
-import React, {Component} from "react";
+import React, { Component } from "react";
 import API from "../utils/API";
 import RestaurantCard from "../components/RestaurantCard";
 import ParticlesBg from 'particles-bg';
@@ -15,14 +15,14 @@ import Cart from "../pages/Cart";
 
 class Restaurant extends Component {
 
-  state={
+  state = {
     search: "",
-    restaurants:[],
-    results:[],
+    restaurants: [],
+    results: [],
     error: "",
-    menuResults:[{sectionname:"",menu_items:[]}],
-    orderCount:"",
-    center:{lat:  47.6062, lng:  -122.3321}
+    menuResults: [{ sectionname: "", menu_items: [] }],
+    orderCount: "",
+    center: { lat: 47.6062, lng: -122.3321 }
   }
 
   handleInputChange = event => {
@@ -37,19 +37,19 @@ class Restaurant extends Component {
           throw new Error(res.data.message);
         }
         this.setState({ results: res.data.data, error: "" });
-        this.setState({ center:{lat:  res.data.data[0].geo.lat, lng: res.data.data[0].geo.lon  } })
+        this.setState({ center: { lat: res.data.data[0].geo.lat, lng: res.data.data[0].geo.lon } })
 
       })
       .catch(err => this.setState({ error: err.message }));
   };
 
-  showMenu = menu =>{
-console.log(menu);
-this.setState({menuResults: menu});
+  showMenu = menu => {
+    console.log(menu);
+    this.setState({ menuResults: menu });
   }
 
-  orderCount = (itemCount)=>{
-      this.setState({orderCount:itemCount});
+  orderCount = (itemCount) => {
+    this.setState({ orderCount: itemCount });
   }
 
   // setCart = (cart) =>{
@@ -57,17 +57,17 @@ this.setState({menuResults: menu});
   // }
 
 
-  render(){
+  render() {
     // const { cart } = this.state
     // const { setCart } = this
-  return (
+    return (
       // <DeveloperContext.Provider value={{cart,setCart}}>
-    <div>
-    <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
-    <Container>
-        {/* {this.state.cart.length} */}
-      
-        {/* <Cart></Cart> */}
+      <div>
+        <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
+        <Container>
+          {/* {this.state.cart.length} */}
+
+          {/* <Cart></Cart> */}
 
           <Alert
             type="danger"
@@ -75,26 +75,26 @@ this.setState({menuResults: menu});
           >
             {this.state.error}
           </Alert>
-        
+
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             restaurants={this.state.restaurants}
           />
-          
-          <Map center={this.state.center} results={this.state.results}/>
 
-          <RestaurantCard results={this.state.results} handleMenu={this.showMenu}/>
-          
-        <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
-        
-   </Container>
-    
-    <Footer/>
-   
-    </div>
-    // </DeveloperContext.Provider>
-  );
+          <Map center={this.state.center} results={this.state.results} />
+
+          <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
+
+          <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
+
+        </Container>
+
+        <Footer />
+
+      </div>
+      // </DeveloperContext.Provider>
+    );
   }
 
 }

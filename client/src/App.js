@@ -6,6 +6,7 @@ import './App.css';
 
 
 
+
 const App = () => {
   
   const [user, setUser] = useState('');
@@ -88,6 +89,7 @@ const App = () => {
   return (
     
     <div className="App">
+    
       {user ? (
         <Hero/>
       ) : (

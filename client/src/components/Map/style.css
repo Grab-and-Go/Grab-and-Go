@@ -1,6 +1,6 @@
 .map {
-  width: 70vw;
-  height: 60vh;
+  width: 80vw;
+  height: 50vh;
   position: relative;
 }
 
@@ -11,10 +11,10 @@
   width: 400px;
   min-height: 200px;
   padding: 20px;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   font-size: 18px;
-  color:rgb(216, 199, 70);
+  color: rgb(216, 199, 70);
 }
 
 .location-info ul {
