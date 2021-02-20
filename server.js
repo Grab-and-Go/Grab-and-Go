@@ -3,8 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const Documenu = require('documenu');
-Documenu.configure('16b00f3cfdd6f2c51bf522089e62c490');
+
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/GrabAndGo',
@@ -23,10 +22,10 @@ if (process.env.NODE_ENV === "production") {
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
+app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
