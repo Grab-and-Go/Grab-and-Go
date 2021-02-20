@@ -1,5 +1,9 @@
 import React from 'react';
 import './style.css'
+import Tilt from 'react-tilt'
+import Logo from "./logoBig.png"
+import ParticlesBg from 'particles-bg';
+import Footer from "../../components/Footer/index"
 
 const Login = (props) => {
 
@@ -17,45 +21,68 @@ const Login = (props) => {
     } = props;
 
     return (
-        <section className="login">
-            
-            <div className="loginContainer">
-                <label>Username</label>
-                <input
-                    type="text"
-                    autoFocus
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <p className="errorMsg">{emailError}</p>
-                <label>Password</label>
-                <input
-                    type="password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <p className="errorMsg">{passwordError}</p>
-                <div className="btnContainer">
-                    {hasAccount ? (
-                        <>
-                            <button onClick={handleLogin}>Sign In</button>
-                            <p>Don't have an account?
+        <div>
+            <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
+            <div className="body">
+                <div className="row">
+                    <div className="col md-9">
+
+                        <div className="containerLogin">
+
+                            <div className="cardA"><img src={Logo} alt="" />
+                                <div className="contentCard">
+                                    <h1>Grab and Go</h1><br />
+                                    <h5>"All is well!" Grab-n-go is inspired by the philiposophy to help the community explore real food places nearby, have a look at there menu and just order it online</h5>
+                                </div></div>
+                        </div ></div>
+
+                    <div className="col md-3">
+
+                        <Tilt className="containerLogin">
+
+                            <div className="cardS">
+                                <div className="contentCard">
+                                    <label> Email </label>
+                                    <input
+                                        type="text"
+                                        autoFocus
+                                        required
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    <p className="errorMsg">{emailError}</p>
+                                    <label>Password</label>
+                                    <input
+                                        type="password"
+                                        required
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
+                                    <p className="errorMsg">{passwordError}</p>
+                                    <div className="btnContainer">
+                                        {hasAccount ? (
+                                            <>
+                                                <button onClick={handleLogin}>Sign In</button>
+                                                <p>Don't have an account?
                                 <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></p>
 
-                        </>
-                    ) : (
-                            <>
-                                <button onClick={handleSignup}>Sign up</button>
-                                <p>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
-                                </p>
+                                            </>
+                                        ) : (
+                                                <>
+                                                    <button onClick={handleSignup}>Sign up</button>
+                                                    <p>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
+                                                    </p>
 
-                            </>
-                        )}
-                </div>
-            </div>
-        </section >
+                                                </>
+                                            )}
+                                    </div>
+                                </div>
+                            </div></Tilt></div>
+
+
+                </div></div>
+            <Footer />
+        </div>
     )
 }
 

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&display=swap');
+
+.cardA {
+    width: 700px;
+    height: 500px;
+    font-family: 'Shippori Mincho',
+        serif;
+}
+
+.containerCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: large;
+    color: #000;
+
+}
+
+.table th {
+    padding-left: 5%;
+}
