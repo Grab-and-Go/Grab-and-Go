@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Bad+Script&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Emilys+Candy&display=swap');
 
 /* font-family: 'Emilys Candy', cursive; */
 
@@ -8,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 70vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,6 +17,11 @@
   color: #000;
 }
 
+.contentCard h1 {
+  font-family: 'Bad Script',
+    cursive;
+
+}
 
 
 .body::before {
@@ -25,7 +29,6 @@
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
 
@@ -67,14 +70,14 @@ button {
 
 button:hover,
 span:hover {
-  color: blue;
+  color: rgb(36, 83, 50);
 }
 
 
 
 .cardA {
   width: 800px;
-  height: 600px;
+  height: 580px;
   font-family: 'Bad Script',
     cursive;
 }
@@ -84,11 +87,14 @@ span:hover {
   height: 400px;
 }
 
+.contentCard h1 {
+  font-weight: 1000;
+
+}
+
 .containerLogin .cardS,
 .cardA {
   position: relative;
-
-
   margin: 10px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
@@ -103,14 +109,14 @@ span:hover {
 
 .containerLogin .cardS .contentCard,
 .cardA {
-  padding: 20px;
+  padding: 25px;
   text-align: center;
 
 }
 
 .containerLogin .cardS .contentCard h2 {
   position: absolute;
-  top: -80px;
+  top: -60px;
   right: 30px;
   font-size: 8em;
   color: rgba(255, 255, 255, 0.05);

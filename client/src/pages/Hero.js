@@ -4,6 +4,7 @@ import DeveloperContext from "../utils/DeveloperContext";
 import Cart from "./Cart";
 import Navbar from "../components/Navbar";
 import fire from '../fire';
+import Logo from "./LogoMakr-1nU0Zg.png"
 
 
 class Hero1 extends Component {
@@ -42,8 +43,8 @@ class Hero1 extends Component {
         return (
             <DeveloperContext.Provider value={{ cart, setCart }}>
                 <section className="hero">
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <a className="navbar-brand" href="#">Grab and Go</a>
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light" >
+                        <a className="navbar-brand" href="#"><img src={Logo} alt="" /></a>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent"><Navbar handleLogout={this.handleLogout}
                             currentPage={this.state.currentPage}
                             handlePageChange={this.handlePageChange}></Navbar>

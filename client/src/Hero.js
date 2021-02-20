@@ -6,10 +6,6 @@ const Documenu = require('documenu');
 Documenu.configure('16b00f3cfdd6f2c51bf522089e62c490');
 
 
-
-
-
-
 const Hero = ({ handleLogout }) => {
     const [query, setQuery] = useState("")
 
@@ -47,7 +43,7 @@ const Hero = ({ handleLogout }) => {
 
     return (
         <section className="hero">
-           
+
             <nav>
                 <h2 onClick={getData} >Welcome</h2>
                 <button onClick={handleLogout}>Logout</button>

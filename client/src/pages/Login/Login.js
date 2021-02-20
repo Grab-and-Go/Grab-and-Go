@@ -3,6 +3,7 @@ import './style.css'
 import Tilt from 'react-tilt'
 import Logo from "./logoBig.png"
 import ParticlesBg from 'particles-bg';
+import Footer from "../../components/Footer/index"
 
 const Login = (props) => {
 
@@ -31,7 +32,7 @@ const Login = (props) => {
                             <div className="cardA"><img src={Logo} alt="" />
                                 <div className="contentCard">
                                     <h1>Grab and Go</h1><br />
-                                    <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque alias quo doloremque id hic culpa maiores magnam voluptatum! Facere vero nesciunt quam suscipit, molestias id aspernatur est. Doloribus, ullam veritatis?</h3>
+                                    <h5>"All is well!" Grab-n-go is inspired by the philiposophy to help the community explore real food places nearby, have a look at there menu and just order it online</h5>
                                 </div></div>
                         </div ></div>
 
@@ -80,6 +81,7 @@ const Login = (props) => {
 
 
                 </div></div>
+            <Footer />
         </div>
     )
 }
