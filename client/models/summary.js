@@ -23,6 +23,6 @@ const summarySchema = new Schema({
 
 });
 
-const Summary = mongoose.model("Book", summarySchema);
+const Summary = mongoose.model("Summary", summarySchema);
 
 module.exports = Summary;
