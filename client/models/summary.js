@@ -2,31 +2,24 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const summarySchema = new Schema({
-  title: {
+  name: {
     type: String,
     required: true
   },
 
-  subtitle: {
-    type: String,
+  price: {
+    type: Number,
   },
   
-  authors: {
-    type: [String],
+  calories: {
+    type: Number,
   },
   
-  description: {
-    type: String,
+  distance: {
+    type: Number,
   },
   
-  image: {
-    type: String,
-  },
-  
-  link: {
-    type: String, 
-  },
-  
+
 
 });
 
