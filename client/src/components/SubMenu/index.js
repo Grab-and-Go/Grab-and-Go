@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import './style.css';
 import DeveloperContext from "../../utils/DeveloperContext"
+import API from "../../utils/API";
 
 function SubMenu(props) {
     const { cart, setCart } = useContext(DeveloperContext);
@@ -21,10 +22,13 @@ function SubMenu(props) {
         console.log(cart);
         var obj = {};
         console.log(event.target);
-        obj["name"] = event.target.name;
+        obj["itemName"] = event.target.name;
         obj["cost"] = event.target.value;
         cart.push(obj);
         setCart(cart);
+        obj["user"] = "jessica";
+        
+        API.storeSummary(obj);
     }
 
 
