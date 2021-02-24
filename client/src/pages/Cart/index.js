@@ -15,6 +15,7 @@ function Cart() {
         total += parseFloat(cart[i].cost);
     }
 
+
     const createOrder = (event) => {
         event.preventDefault();
         console.log("cart",cart);
@@ -29,6 +30,7 @@ function Cart() {
         API.storeSummary(obj);
 
     }
+
 
 
     return (
@@ -60,9 +62,11 @@ function Cart() {
                                     </td>
                                 </tr>
                             ))}
+
                             <tr>
                                 <th><h3>Total</h3></th>
                                 <th><h3>${total}</h3></th>
+                          
                             </tr>
                         </thead>
                         <br />   

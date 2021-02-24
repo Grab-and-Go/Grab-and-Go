@@ -31,7 +31,7 @@ function SubMenu(props) {
         <div class="list-group">
             {rows.map(item =>
                 <div>
-                    <div class="list-group-item">{item.name} --- {item.price}$<button name={item.name} value={item.price} onClick={cartHandler} className="btn btn-success"><i class="fas fa-shopping-cart"></i></button></div>
+                    <div class="list-group-item">{item.name} --- {item.price}$<button name={item.name} value={item.price} onClick={cartHandler} className="btn btn-success"> <i class="fas fa-shopping-cart"></i></button></div>
 
                 </div>)}
         </div>
