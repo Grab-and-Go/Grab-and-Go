@@ -18,9 +18,7 @@ function SubMenu(props) {
     // fixing event.target
     const cartHandler = (event) => {
         event.preventDefault();
-        console.log(cart);
         var obj = {};
-        console.log(event.target);
         obj["name"] = event.target.name;
         obj["cost"] = event.target.value;
         cart.push(obj);
