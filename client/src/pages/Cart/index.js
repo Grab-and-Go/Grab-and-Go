@@ -4,6 +4,7 @@ import ParticlesBg from 'particles-bg';
 import Footer from "../../components/Footer/index";
 import "./style.css";
 import API from "../../utils/API";
+import fire from "../../fire"
 
 
 
@@ -11,19 +12,18 @@ function Cart() {
     const { cart } = useContext(DeveloperContext);
 
     var total = 0;
-    for(var i = 0;i <cart.length;i++)
-    {
+    for (var i = 0; i < cart.length; i++) {
         total += parseFloat(cart[i].cost);
     }
 
 
     const createOrder = (event) => {
         event.preventDefault();
-        console.log("cart",cart);
+        console.log("cart", cart);
         var obj = {};
         obj["orderArray"] = cart;
         obj["totalCost"] = total;
-        obj["user"] = "jessica";
+        obj["user"] = fire.auth().currentUser.email;
         obj["distance"] = 1.3;
         obj["calories"] = 50;
         obj["restaurantName"] = "";
@@ -31,7 +31,7 @@ function Cart() {
         API.storeSummary(obj);
 
     }
-
+    console.log(fire.auth().currentUser)
 
 
     return (
@@ -67,10 +67,10 @@ function Cart() {
                             <tr>
                                 <th><h3>Total</h3></th>
                                 <th><h3>${total}</h3></th>
-                          
+
                             </tr>
                         </thead>
-                        <br />   
+                        <br />
                         <button className="cart btn btn-success btn-lg" type="submit" onClick={createOrder}> <i class="fas fa-cheese"> Submit Order</i></button>
 
                     </div>
