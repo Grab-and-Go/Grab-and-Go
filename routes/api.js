@@ -12,7 +12,7 @@ router.get("/cart", (req, res) => {
 
 router.post("/cart", async (req, res) => {
 
-    const menuItem = new Summary (req.body)
+    const menuItem = new Summary(req.body)
     await menuItem.save()
     res.json(menuItem)
 })

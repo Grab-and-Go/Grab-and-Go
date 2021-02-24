@@ -21,7 +21,7 @@ class Restaurant extends Component {
     error: "",
     menuResults: [{ sectionname: "", menu_items: [] }],
     orderCount: "",
-    center: { lat: 47.6062, lng: -122.3321 }
+    center: { lat: 47.6062, lng: -122.3321 },
   }
 
   handleInputChange = event => {
@@ -37,13 +37,14 @@ class Restaurant extends Component {
         }
         this.setState({ results: res.data.data, error: "" });
         this.setState({ center: { lat: res.data.data[0].geo.lat, lng: res.data.data[0].geo.lon } })
+        console.log("this.state", this.state.results)
 
       })
       .catch(err => this.setState({ error: err.message }));
   };
 
-  showMenu = menu => {
-    console.log(menu);
+  showMenu = (menu)=> {
+    console.log("menu", menu);
     this.setState({ menuResults: menu });
   }
 

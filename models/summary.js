@@ -11,12 +11,12 @@ const summarySchema = new Schema({
     type: String, 
   },
 
-  itemName: {
-    type: String,
+  orderArray: {
+    type: Array,
     required: true
   },
 
-  price: {
+  totalCost: {
     type: Number,
   },
   
@@ -26,7 +26,7 @@ const summarySchema = new Schema({
   
   distance: {
     type: Number,
-  },
+  }
   
 
 
