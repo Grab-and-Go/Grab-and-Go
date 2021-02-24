@@ -11,4 +11,3 @@ export default {
     return axios.post("/api/cart", menuItem)
   }
 };
-
