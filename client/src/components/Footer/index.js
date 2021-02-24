@@ -15,9 +15,9 @@ function Footer() {
           <div className="col-md-3">
             <h5 className="footer-heading">Contact Us</h5>
             <address className="footer-info">
-              1111 washington street<br></br>
+              {/* 1111 washington street<br></br>
                 Suite 700<br></br>
-                Seattle,WA 00009<br></br>
+                Seattle,WA 00009<br></br> */}
               <br></br>
                 P: 000-000-000<br></br>
               <p className="footer-info"> <i className="fab fa-facebook"></i> <i className="fab fa-linkedin-in"></i> <i className="fab fa-pinterest-square"></i></p>
