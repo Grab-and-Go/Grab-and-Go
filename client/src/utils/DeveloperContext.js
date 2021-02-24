@@ -2,7 +2,8 @@ import React from "react";
 
 const DeveloperContext = React.createContext({
   orderCount: "",
-  cart: []
+  cart: [], 
+  restaurant_name: ""
 
 });
 
