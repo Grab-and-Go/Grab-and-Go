@@ -22,8 +22,14 @@ class Restaurant extends Component {
     menuResults: [{ sectionname: "", menu_items: [] }],
     orderCount: "",
     center: { lat: 47.6062, lng: -122.3321 },
-    currentRestaurant: ""
+    currentRestaurant: "",
+    locationInfo: null,
   }
+setLocationInfo = location => {
+  this.setState({
+    locationInfo: location
+  })
+}
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
@@ -36,6 +42,7 @@ class Restaurant extends Component {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
         }
+        this.setState({locationInfo: null})
         this.setState({ results: res.data.data, error: "" });
         this.setState({ center: { lat: res.data.data[0].geo.lat, lng: res.data.data[0].geo.lon } })
         // console.log("this.state", this.state.results)
@@ -85,9 +92,9 @@ class Restaurant extends Component {
             restaurants={this.state.restaurants}
           />
 
-          <Map center={this.state.center} results={this.state.results} />
-
-          <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
+          <Map center={this.state.center} results={this.state.results} setLocationInfo={this.setLocationInfo} locationInfo={this.state.locationInfo} />
+          <br />
+          <RestaurantCard results={this.state.locationInfo ? this.state.results.filter(result=>result.restaurant_id === this.state.locationInfo.restaurantID) : this.state.results } handleMenu={this.showMenu} />
 
           <MenuCard menuRes={this.state.menuResults} center={this.state.center} currentRestaurant={this.state.currentRestaurant} orderCount={this.orderCount}></MenuCard>
 

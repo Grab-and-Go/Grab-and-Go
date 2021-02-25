@@ -5,13 +5,17 @@ import LocationMarker from "./LocationMarker";
 import Locationinfobox from "./LocationInfoBox";
 
 
-const Map = ({ results, center }) => {
+const Map = ({ results, center, setLocationInfo, locationInfo }) => {
 
-    const [locationInfo, setLocationInfo] = useState(null)
 
     const markers = results.map(item => {
         return <LocationMarker
-            lat={item.geo.lat} lng={item.geo.lon} onClick={() => setLocationInfo({ name: item.restaurant_name, type: item.cuisines[1] === null ? item.cuisines[0] : item.cuisines[1], phone: item.restaurant_phone })}
+            lat={item.geo.lat} lng={item.geo.lon} onClick={() => setLocationInfo({ 
+                name: item.restaurant_name, 
+                type: item.cuisines[1] === null ? item.cuisines[0] : item.cuisines[1], 
+                phone: item.restaurant_phone,
+                restaurantID: item.restaurant_id
+            })}
         />
     })
 
