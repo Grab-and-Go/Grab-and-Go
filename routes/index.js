@@ -6,7 +6,7 @@ const router = require("express").Router();
 router.use("/api", API);
 
 router.use((req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 

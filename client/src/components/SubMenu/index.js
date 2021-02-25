@@ -15,15 +15,17 @@ function SubMenu(props) {
     rows.push(obj);
   }
 
-  // fixing event.target
-  const cartHandler = (event) => {
-    event.preventDefault();
-    var obj = {};
-    obj["name"] = event.target.name;
-    obj["cost"] = event.target.value;
-    cart.push(obj);
-    setCart(cart);
-  };
+    // fixing event.target
+    const cartHandler = (event) => {
+        event.preventDefault();
+        var obj = {};
+        obj["name"] = event.target.name;
+        obj["cost"] = event.target.value;
+        obj["currentRestaurant"] = props.currentRestaurant;
+        obj["coords"] = props.center;
+        cart.push(obj);
+        setCart(cart);
+    }
 
   return (
     <div className="list-group">
@@ -31,7 +33,7 @@ function SubMenu(props) {
         <div>
           <div className="list-group-item">
             {item.name} --- ${item.price}
-            <button
+            <button style={{float: "right"}}
               name={item.name}
               value={item.price}
               onClick={cartHandler}
