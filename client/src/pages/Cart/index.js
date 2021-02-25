@@ -21,7 +21,7 @@ function Cart() {
         console.log("cart", cart);
         var obj = {};
         obj["orderArray"] = cart;
-        obj["totalCost"] = total;
+        obj["totalCost"] = total.toFixed(2);
         obj["user"] = fire.auth().currentUser.email;
         obj["distance"] = 1.3;
         obj["calories"] = 50;
@@ -65,7 +65,7 @@ function Cart() {
 
                             <tr>
                                 <th><h3>Total</h3></th>
-                                <th><h3>${total}</h3></th>
+                                <th><h3>${total.toFixed(2)}</h3></th>
 
                             </tr>
                         </thead>
