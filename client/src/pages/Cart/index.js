@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DeveloperContext from "../../utils/DeveloperContext"
 import ParticlesBg from 'particles-bg';
 import Footer from "../../components/Footer/index";
@@ -10,6 +10,13 @@ import fire from "../../fire"
 
 function Cart() {
     const { cart } = useContext(DeveloperContext);
+    const [currentLocation, setCurrentLocation] = useState({lat:0, lng:0})
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            setCurrentLocation({ lat:position.coords.latitude, lng:position.coords.longitude });
+          });
+    }, []);
 
     var total = 0;
     for (var i = 0; i < cart.length; i++) {
@@ -26,11 +33,13 @@ function Cart() {
         obj["user"] = fire.auth().currentUser.email;
         obj["distance"] = 1.3;
         obj["calories"] = 50;
-        obj["restaurantName"] = "";
+        obj["restaurantName"] = cart[0].currentRestaurant;
         console.log("obj", obj);
         API.storeSummary(obj);
 
     }
+
+    
 
     return (
         <div>

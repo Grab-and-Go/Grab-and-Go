@@ -22,6 +22,7 @@ class Restaurant extends Component {
     menuResults: [{ sectionname: "", menu_items: [] }],
     orderCount: "",
     center: { lat: 47.6062, lng: -122.3321 },
+    currentRestaurant: ""
   }
 
   handleInputChange = event => {
@@ -37,15 +38,17 @@ class Restaurant extends Component {
         }
         this.setState({ results: res.data.data, error: "" });
         this.setState({ center: { lat: res.data.data[0].geo.lat, lng: res.data.data[0].geo.lon } })
-        console.log("this.state", this.state.results)
+        // console.log("this.state", this.state.results)
 
       })
       .catch(err => this.setState({ error: err.message }));
   };
 
-  showMenu = (menu)=> {
+  showMenu = (menu, restaurant, geo)=> {
     console.log("menu", menu);
     this.setState({ menuResults: menu });
+    this.setState({ center: { lat: geo.lat, lng: geo.lng }})
+    this.setState({ currentRestaurant: restaurant })
   }
 
   orderCount = (itemCount) => {
@@ -86,7 +89,7 @@ class Restaurant extends Component {
 
           <RestaurantCard results={this.state.results} handleMenu={this.showMenu} />
 
-          <MenuCard menuRes={this.state.menuResults} orderCount={this.orderCount}></MenuCard>
+          <MenuCard menuRes={this.state.menuResults} center={this.state.center} currentRestaurant={this.state.currentRestaurant} orderCount={this.orderCount}></MenuCard>
 
         </Container>
 

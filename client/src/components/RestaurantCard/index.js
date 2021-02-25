@@ -20,7 +20,7 @@ function RestaurantCard(props) {
                 Visit website!
               </a>
             </p>
-            <span onClick={() => props.handleMenu(item.menus[0].menu_sections, item.restaurant_name)}>
+            <span onClick={() => props.handleMenu(item.menus[0].menu_sections, item.restaurant_name, {lat:item.geo.lat, lng:item.geo.lon})}>
               View Menu
             </span>
           </div>

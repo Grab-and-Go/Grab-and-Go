@@ -23,7 +23,7 @@ function NavTabs(props) {
           onClick={() => props.handlePageChange("Cart")}
           className={props.currentPage === "About" ? "nav-link active" : "nav-link"}
         >
-          Summary
+          Cart
         </a>
       </li>
 

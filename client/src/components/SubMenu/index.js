@@ -21,6 +21,8 @@ function SubMenu(props) {
         var obj = {};
         obj["name"] = event.target.name;
         obj["cost"] = event.target.value;
+        obj["currentRestaurant"] = props.currentRestaurant;
+        obj["coords"] = props.center;
         cart.push(obj);
         setCart(cart);
     }
