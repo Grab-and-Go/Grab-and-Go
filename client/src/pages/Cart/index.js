@@ -31,8 +31,6 @@ function Cart() {
         API.storeSummary(obj);
 
     }
-    console.log(fire.auth().currentUser)
-
 
     return (
         <div>
