@@ -1,6 +1,6 @@
 .list-group>.list-group {
   display: none;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .list-group-item:focus-within+.list-group {
@@ -17,7 +17,7 @@
 }
 
 .list-group>.list-group>.list-group-item {
-  padding-left: 2.5rem;
+  padding-left: 2rem;
 }
 
 .list-group-collapse {
@@ -27,4 +27,8 @@
 .fa-shopping-cart
 {
   pointer-events: none;
+}
+
+#Cart-button{
+
 }

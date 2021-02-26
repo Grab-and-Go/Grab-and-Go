@@ -32,7 +32,7 @@ function SubMenu(props) {
       {rows.map((item) => (
         <div>
           <div className="list-group-item">
-            {item.name} --- ${item.price}
+            {item.name}  ---  ${item.price}
             <button style={{float: "right"}}
               name={item.name}
               value={item.price}

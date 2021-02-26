@@ -5,7 +5,7 @@ function SearchForm(props) {
   return (
     <form className="search">
       <div className="form-group d-flex">
-        <span className="fluid" style={{position: "relative", display: "inline-block", direction: "ltr"}}>
+        <span className="fluid" style={{display: "inline-block"}}>
         <input style={{float: "left"}}
           value={props.search}
           onChange={props.handleInputChange}
