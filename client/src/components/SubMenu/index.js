@@ -33,11 +33,11 @@ function SubMenu(props) {
         <div>
           <div className="list-group-item">
             {item.name} --- ${item.price}
-            <button style={{float: "right"}}
+            <button style={{float: "right", backgroundColor:"#177245"}}
               name={item.name}
               value={item.price}
               onClick={cartHandler}
-              className="btn btn-success"
+              className="btn btn-success btn-sm"
             >
               {" "}
               <i className="fas fa-shopping-cart"></i>
