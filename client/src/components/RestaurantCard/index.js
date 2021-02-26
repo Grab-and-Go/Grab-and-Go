@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 
 function RestaurantCard(props) {
+  // console.log("restaurantCard", props.results)
+
   return (
     <div>
       {props.results.map((item) => (
@@ -18,7 +20,7 @@ function RestaurantCard(props) {
                 Visit website!
               </a>
             </p>
-            <span onClick={() => props.handleMenu(item.menus[0].menu_sections)}>
+            <span onClick={() => props.handleMenu(item.menus[0].menu_sections, item.restaurant_name, {lat:item.geo.lat, lng:item.geo.lon})}>
               View Menu
             </span>
           </div>

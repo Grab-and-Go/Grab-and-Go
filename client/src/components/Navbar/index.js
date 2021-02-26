@@ -1,8 +1,6 @@
 import React from "react";
 
-
 function NavTabs(props) {
-
 
   return (
 
@@ -23,7 +21,7 @@ function NavTabs(props) {
           onClick={() => props.handlePageChange("Cart")}
           className={props.currentPage === "About" ? "nav-link active" : "nav-link"}
         >
-          Summary
+          Cart
         </a>
       </li>
 

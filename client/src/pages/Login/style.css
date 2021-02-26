@@ -11,41 +11,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Emilys Candy',
+  font-family: 'Bad Script',
     cursive;
   font-size: large;
   color: #000;
 }
 
-.contentCard h1 {
+.contentCard h1,
+h3 {
   font-family: 'Bad Script',
     cursive;
 
 }
 
-
-.body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-}
-
-.body::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-}
-
 .containerLogin {
-  position: relative;
+  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,8 +56,8 @@ span:hover {
 
 
 .cardA {
-  width: 800px;
-  height: 580px;
+  width: 700px;
+  /* height: 500px; */
   font-family: 'Bad Script',
     cursive;
 }
@@ -99,7 +79,7 @@ span:hover {
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
+  overflow: scroll;
   display: flex;
   justify-content: center;
   align-items: center;

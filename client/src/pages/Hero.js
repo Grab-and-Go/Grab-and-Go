@@ -20,7 +20,8 @@ class Hero1 extends Component {
     };
     setCart = (cart) => {
         this.setState({ cart: cart })
-    }
+    };
+  
 
 
     renderPage = () => {
@@ -40,6 +41,8 @@ class Hero1 extends Component {
     render() {
         const { cart } = this.state
         const { setCart } = this
+        // const { restaurant_name } = this.state
+        // const { setRestaurantName } = this
         return (
             <DeveloperContext.Provider value={{ cart, setCart }}>
                 <section className="hero">

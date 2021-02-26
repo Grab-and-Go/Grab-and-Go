@@ -24,21 +24,24 @@ const Login = (props) => {
         <div>
             <ParticlesBg color="#08f09b" num={200} type="cobweb" bg={true} />
             <div className="body">
-                <div className="row">
-                    <div className="col md-9">
+                <div className="containerLogin">
+                    <div className="row">
+                        <div className="col md-9">
 
-                        <div className="containerLogin">
 
-                            <div className="cardA"><img src={Logo} alt="" />
+
+                            <div className="cardA">
+
+                                <img src={Logo} alt="" />
                                 <div className="contentCard">
                                     <h1>Grab and Go</h1><br />
-                                    <h5>"All is well!" Grab-n-go is inspired by the philiposophy to help the community explore real food places nearby, have a look at there menu and just order it online</h5>
+                                    <h3>"All is well!" Grab-n-go is inspired by the philiposophy to help the community explore real food places nearby, have a look at there menu and just order it online</h3>
                                 </div></div>
                         </div ></div>
+                    <Tilt className="containerLogin">
+                        <div className="col md-3">
 
-                    <div className="col md-3">
 
-                        <Tilt className="containerLogin">
 
                             <div className="cardS">
                                 <div className="contentCard">
@@ -77,7 +80,7 @@ const Login = (props) => {
                                             )}
                                     </div>
                                 </div>
-                            </div></Tilt></div>
+                            </div></div></Tilt>
 
 
                 </div></div>

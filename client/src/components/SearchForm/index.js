@@ -4,8 +4,9 @@ import "./style.css";
 function SearchForm(props) {
   return (
     <form className="search">
-      <div className="form-group">
-        <input
+      <div className="form-group d-flex">
+        <span className="fluid" style={{position: "relative", display: "inline-block", direction: "ltr"}}>
+        <input style={{float: "left"}}
           value={props.search}
           onChange={props.handleInputChange}
           name="restaurant"
@@ -20,6 +21,7 @@ function SearchForm(props) {
             <option value={restaurant} key={restaurant} />
           ))}
         </datalist>
+        </span>
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
           Search
         </button>
