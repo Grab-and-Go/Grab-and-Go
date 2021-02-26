@@ -4,6 +4,7 @@
   "engines": {
     "node": "14.8.0"
   },
+  "homepage": "https://grab-and-go.herokuapp.com/",
   "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
