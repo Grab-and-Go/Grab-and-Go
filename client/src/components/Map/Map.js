@@ -10,9 +10,9 @@ const Map = ({ results, center, setLocationInfo, locationInfo }) => {
 
     const markers = results.map(item => {
         return <LocationMarker
-            lat={item.geo.lat} lng={item.geo.lon} onClick={() => setLocationInfo({ 
-                name: item.restaurant_name, 
-                type: item.cuisines[1] === null ? item.cuisines[0] : item.cuisines[1], 
+            lat={item.geo.lat} lng={item.geo.lon} onClick={() => setLocationInfo({
+                name: item.restaurant_name,
+                type: item.cuisines[1] === null ? item.cuisines[0] : item.cuisines[1],
                 phone: item.restaurant_phone,
                 restaurantID: item.restaurant_id
             })}
@@ -24,8 +24,7 @@ const Map = ({ results, center, setLocationInfo, locationInfo }) => {
     return (
         <div className="map">
             <GoogleMapReact
-                // bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_KEY }}
-                bootstrapURLKeys={{ key: "AIzaSyCuYe9_LQT30CkJ5wIQA91_l5CjeFCzyyw" }}
+                bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_KEY }}
                 center={center}
                 defaultZoom={zoom}
 
