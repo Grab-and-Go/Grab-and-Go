@@ -5,8 +5,8 @@ import locationIcon from "@iconify/icons-mdi/restaurant-menu";
 const LocationMarker = ({ lat, lng, onClick }) => {
 
     const markerStyle={
-        fontSize: "1rem",
-        color: "purple"
+        fontSize: "1.3rem",
+        color: "#177245"
     };
     return (
         <div className="location-marker" onClick={onClick}>
