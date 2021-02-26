@@ -35,7 +35,7 @@ const Login = (props) => {
                                 <img src={Logo} alt="" />
                                 <div className="contentCard">
                                     <h1>Grab and Go</h1><br />
-                                    <h3>"All is well!" Grab-n-go is inspired by the philiposophy to help the community explore real food places nearby, have a look at there menu and just order it online</h3>
+                                    <h3>"All is well!" Grab-n-go is inspired by the philiposophy to help the community explore real food places nearby, have a look at their menus and just order it online</h3>
                                 </div></div>
                         </div ></div>
                     <Tilt className="containerLogin">
