@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Emilys+Candy&display=swap');
+
+/* font-family: 'Emilys Candy', cursive; */
+
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bad Script',
+    cursive;
+  font-size: large;
+  color: #000;
+}
+
+.contentCard h1,
+h3 {
+  font-family: 'Bad Script',
+    cursive;
+
+}
+
+.containerLogin {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+label {
+  margin: 2%;
+
+}
+
+input {
+  width: 100%;
+}
+
+span,
+button {
+  padding: 5px;
+}
+
+button:hover,
+span:hover {
+  color: rgb(36, 83, 50);
+}
+
+
+
+.cardA {
+  width: 700px;
+  /* height: 500px; */
+  font-family: 'Bad Script',
+    cursive;
+}
+
+.cardS {
+  width: 350px;
+  height: 400px;
+}
+
+.contentCard h1 {
+  font-weight: 1000;
+
+}
+
+.containerLogin .cardS,
+.cardA {
+  position: relative;
+  margin: 10px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.containerLogin .cardS .contentCard,
+.cardA {
+  padding: 25px;
+  text-align: center;
+
+}
+
+.containerLogin .cardS .contentCard h2 {
+  position: absolute;
+  top: -60px;
+  right: 30px;
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+
+.containerLogin .cardS .contentCard p {
+  font-size: 1em;
+  color: #000;
+  font-weight: 300;
+}
