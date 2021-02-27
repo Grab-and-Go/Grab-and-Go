@@ -12,7 +12,7 @@ function SearchForm(props) {
           name="restaurant"
           list="restaurants"
           type="text"
-          className="form-control mr-sm-8"
+          className="form-control mx-sm-6"
           placeholder="Enter a zipcode"
           id="restaurant"
         />
@@ -22,6 +22,7 @@ function SearchForm(props) {
           ))}
         </datalist>
         </span>
+        &nbsp;&nbsp;
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success" style={{ backgroundColor: "#d4e6c1", color: "#177245"}}>
           Search
         </button>
