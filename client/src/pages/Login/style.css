@@ -43,14 +43,27 @@ input {
   width: 100%;
 }
 
-span,
+
 button {
+  padding: 7px!important;
+  background-color: #d9ead3;
+  border-radius: 0.3rem !important;
   padding: 5px;
+  border-color:#659a36!important;
 }
 
-button:hover,
+button:hover{
+  color: rgb(36, 83, 50);
+  padding: 8px!important;
+}
+
 span:hover {
   color: rgb(36, 83, 50);
+  background-color: #d9ead3;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 0.3rem ;
+
 }
 
 
@@ -109,3 +122,10 @@ span:hover {
   color: #000;
   font-weight: 300;
 }
+
+/* .btn {
+  border-radius: 0.3rem;
+  padding: 5px;
+  background-color: #d9ead3;
+  border-color:#659a36;
+} */
