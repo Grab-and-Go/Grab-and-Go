@@ -20,11 +20,11 @@ The goal of this project was to create a full-stack React-based Food ordering Ap
 
 <hr>
 
-![Login Page](./client/public/images/)
+![Login Page](./client/public/images/Login.png)
 
 <hr>
 
-![Restaurant Page](./client/public/images/)
+![Restaurant Page](./client/public/images/Restaurant.png)
 
 <hr>
 
@@ -68,7 +68,7 @@ This Project can be used to view the list of restaurants near by in the entered 
 
 Watch the video below to see how the App works.
 
-![Demo](./client/public/images/)
+![Demo](./client/public/images/project3.gif)
 
 ## Contributing
 
