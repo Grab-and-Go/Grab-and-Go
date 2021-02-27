@@ -2,7 +2,7 @@
 
 .cardA {
     width: 700px;
-    height: 500px;
+    padding-top: 2em;
     font-family: 'Shippori Mincho',
         serif;
 }
@@ -20,6 +20,3 @@
 
 }
 
-.table th {
-    padding-left: 5%;
-}

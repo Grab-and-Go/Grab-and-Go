@@ -46,9 +46,9 @@ class Hero1 extends Component {
         return (
             <DeveloperContext.Provider value={{ cart, setCart }}>
                 <section className="hero">
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light" >
+                    <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: "#d9ead3"}} >
                         <a className="navbar-brand" href="#"><img src={Logo} alt="" /></a>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent"><Navbar handleLogout={this.handleLogout}
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent"><Navbar handleLogout={this.handleLogout}
                             currentPage={this.state.currentPage}
                             handlePageChange={this.handlePageChange}></Navbar>
                         </div>

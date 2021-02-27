@@ -19,8 +19,8 @@ function Footer() {
                 Suite 700<br></br>
                 Seattle,WA 00009<br></br> */}
               
-                P: 000-000-000<br></br>
-              <p className="footer-info"> <i className="fab fa-facebook"></i> <i className="fab fa-linkedin-in"></i> <i className="fab fa-pinterest-square"></i></p>
+              Grab and Goers<br></br>
+              <p className="footer-info"><a href="https://github.com/Grab-and-Go/Grab-and-Go" style={{ color: '#d9ead3' }}><i className="fab fa-github fa-2x"></i></a> </p>
             </address>
           </div>
           {/* Founders column */}
@@ -32,7 +32,7 @@ function Footer() {
             <p className="footer-info"><a href="" className="portfolio">Sai Purciful</a></p>
             </div>
             <div className="col-md-6">
-            <p className="footer-info"><a href="" className="portfolio">Jessica Tzunu Huang </a></p>
+            <p className="footer-info"><a href="https://jesshuang7.github.io/Portfolio_React/" className="portfolio">Jessica Tzunu Huang </a></p>
             <p className="footer-info"><a href="" className="portfolio">Sam Rodriguez </a></p>
             </div>
             </div>
